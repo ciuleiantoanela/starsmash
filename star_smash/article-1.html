@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bungee&family=Comic+Neue:wght@400;700&display=swap">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>EXPOSED: Spotify's Dying Genre 💔 | STAR SMASH!</title>
+</head>
+<body>
+
+    <!-- Sparkles for atmosphere -->
+    <div class="sparkle sparkle-1">✨</div>
+    <div class="sparkle sparkle-3">💖</div>
+    <div class="sparkle sparkle-5">★</div>
+    <div class="sparkle sparkle-7">✨</div>
+
+    <article class="article">
+
+        <a href="index.html" class="back-btn">← BACK TO COVER</a>
+
+        <div class="article-tag">💔 EXCLUSIVE SCANDAL 💔</div>
+
+        <h1 class="article-headline">
+            EXPOSED!<br>
+            The Spotify Genre <span class="highlight">QUIETLY</span> Dying
+        </h1>
+
+        <p class="article-subhead">
+            Insiders REVEAL the numbers nobody wanted u 2 see... 😱📉
+        </p>
+
+        <p class="byline">
+            By <strong>Ana-Antoanela Ciulei</strong> · Investigative Editor · May 2026
+        </p>
+
+      <div class="chart-box">
+    <h3 class="chart-title">📉 GENRE STREAMS — THE RECEIPTS 📉</h3>
+    <canvas id="genreChart"></canvas>
+    <p class="chart-caption">
+        Source: Spotify Charts data, 2019–2024 💋
+    </p>
+</div>
+
+        <div class="article-body">
+
+            <p>
+                Brace urself, hunny. Sources CLOSE to the music industry are
+                spilling tea hotter than a curling iron, and the receipts? In
+                their <em>spreadsheets</em>. 💅
+            </p>
+
+            <p>
+                After analyzing streaming data across 12 months, this reporter
+                can EXCLUSIVELY confirm what fans have whispered for years —
+                one beloved genre is being QUIETLY left for dead. And no, it's
+                not what u think.
+            </p>
+
+            <div class="pull-quote">
+                "The numbers don't lie. But the algorithms? They're LYING
+                FOR FILTH." 💋
+            </div>
+
+            <p>
+                A deep dive into listener behavior reveals a 34% decline in
+                monthly engagement — yet the genre still appears on "popular"
+                playlists. Coincidence? This investigation says NO. 🚨
+            </p>
+
+            <p>
+                <strong>Stay tuned for the full breakdown</strong>, including
+                charts, demographics, and the SHOCKING playlist data Spotify
+                doesn't want u to see. Full data project coming soon. 📊💔
+            </p>
+
+        </div>
+
+        <aside class="sidebar">
+            <h3>🕵️ SOURCES SAY...</h3>
+            <ul>
+                <li>👀 The data was pulled in Python (she's CULTURED)</li>
+                <li>📈 Stats analyzed in R (she's SHOWING OFF)</li>
+                <li>💔 No genres were harmed in this exposé</li>
+                <li>📞 Spotify declined to comment (allegedly)</li>
+            </ul>
+        </aside>
+
+        <a href="index.html" class="back-btn">← BACK TO COVER</a>
+
+    </article>
+<script>
+    // Find the canvas we made above
+    const ctx = document.getElementById('genreChart');
+
+    // Tell Chart.js to draw on it
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['2019', '2020', '2021', '2022', '2023', '2024'],
+            datasets: [{
+                label: 'Indie Rock Streams (millions)',
+                data: [180, 165, 140, 115, 92, 71],
+                backgroundColor: '#ff1493',
+                borderColor: '#00ffff',
+                borderWidth: 4,
+                borderRadius: 8
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    labels: {
+                        color: '#ff1493',
+                        font: { size: 16, weight: 'bold' }
+                    }
+                },
+                title: {
+                    display: true,
+                    text: 'INDIE ROCK IS DYING. THE NUMBERS SPEAK. 💔',
+                    color: '#ff1493',
+                    font: { size: 20, weight: 'bold' }
+                }
+            },
+            scales: {
+                y: {
+                    ticks: { color: '#ff1493', font: { weight: 'bold' } },
+                    grid: { color: 'rgba(255, 20, 147, 0.2)' }
+                },
+                x: {
+                    ticks: { color: '#ff1493', font: { weight: 'bold' } },
+                    grid: { color: 'rgba(255, 20, 147, 0.2)' }
+                }
+            }
+        }
+    });
+</script>
+
+</body>
+</html>

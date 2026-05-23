@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bungee&family=Comic+Neue:wght@400;700&display=swap">
+    <link rel="stylesheet" href="style.css">
+    <title>Which Tragic Pop Star R U? 💅 | STAR SMASH!</title>
+</head>
+<body>
+
+    <!-- Sparkles -->
+    <div class="sparkle sparkle-1">✨</div>
+    <div class="sparkle sparkle-3">💖</div>
+    <div class="sparkle sparkle-5">★</div>
+    <div class="sparkle sparkle-7">✨</div>
+
+    <article class="article">
+
+        <a href="index.html" class="back-btn">← BACK TO COVER</a>
+
+        <div class="article-tag">💅 PERSONALITY QUIZ 💅</div>
+
+        <h1 class="article-headline">
+            Which <span class="highlight">Tragic</span> Pop Star R U?
+        </h1>
+
+        <p class="article-subhead">
+            Answer 5 questions &amp; we'll EXPOSE ur true celeb soul 💋
+        </p>
+
+        <!-- The quiz container — JavaScript will swap stuff in/out of here -->
+        <div id="quiz-area">
+
+            <!-- Question 1 -->
+            <div class="question" id="q1">
+                <h3>1. It's 3am. Where R U?</h3>
+                <button class="answer" data-points="1">😭 Crying in the bathroom of a club</button>
+                <button class="answer" data-points="2">📞 On the phone with my ex (again)</button>
+                <button class="answer" data-points="3">💎 At an after-party I wasn't invited to</button>
+                <button class="answer" data-points="4">🛏️ Asleep. I'm REGULATED now.</button>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="question" id="q2" style="display: none;">
+                <h3>2. Pick a drink 🍸</h3>
+                <button class="answer" data-points="1">🥂 Champagne (warm, half-finished)</button>
+                <button class="answer" data-points="2">☕ Iced coffee, 4 shots</button>
+                <button class="answer" data-points="3">🍷 Red wine straight from the bottle</button>
+                <button class="answer" data-points="4">💧 Cucumber water. I'm DETOXING.</button>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="question" id="q3" style="display: none;">
+                <h3>3. Ur signature scandal would be...</h3>
+                <button class="answer" data-points="1">📸 A leaked photo dump</button>
+                <button class="answer" data-points="2">🎤 Telling all on a podcast</button>
+                <button class="answer" data-points="3">💍 A secret marriage. To a fan.</button>
+                <button class="answer" data-points="4">🧘 Filing a defamation lawsuit</button>
+            </div>
+
+            <!-- Question 4 -->
+            <div class="question" id="q4" style="display: none;">
+                <h3>4. Pick a Met Gala outfit 👗</h3>
+                <button class="answer" data-points="1">🖤 Sheer black, dripping in mascara tears</button>
+                <button class="answer" data-points="2">🌸 Pastel princess gown w/ a corset that hurts</button>
+                <button class="answer" data-points="3">🔥 Naked dress that broke the internet</button>
+                <button class="answer" data-points="4">🤍 Minimalist column gown. I'm ABOVE this.</button>
+            </div>
+
+            <!-- Question 5 -->
+            <div class="question" id="q5" style="display: none;">
+                <h3>5. Ur greatest fear?</h3>
+                <button class="answer" data-points="1">😢 Being forgotten</button>
+                <button class="answer" data-points="2">💔 Public embarrassment</button>
+                <button class="answer" data-points="3">📉 Losing relevance</button>
+                <button class="answer" data-points="4">🪞 Self-reflection</button>
+            </div>
+
+            <!-- Result area (hidden until they finish) -->
+            <div class="result" id="result" style="display: none;">
+                <div class="article-tag">🔮 UR RESULT 🔮</div>
+                <h2 class="result-name" id="result-name"></h2>
+                <div class="result-photo">
+                    <p class="photo-placeholder" id="result-emoji"></p>
+                </div>
+                <p class="result-bio" id="result-bio"></p>
+                <button class="answer" onclick="restartQuiz()">💋 PLAY AGAIN 💋</button>
+            </div>
+
+        </div>
+
+        <a href="index.html" class="back-btn">← BACK TO COVER</a>
+
+    </article>
+
+    <!-- The JavaScript that runs the quiz -->
+    <script>
+        // Track total score and which question we're on
+        let score = 0;
+        let currentQuestion = 1;
+        const totalQuestions = 5;
+
+        // The 4 possible results (one per "tier" of total score)
+        const results = {
+            tragic: {
+                name: "TIFFANEE SPARX 😭",
+                emoji: "😭💔🥀",
+                bio: "U are TIFFANEE — pop princess gone rogue. Sources say u haven't slept since 2019 and ur last single charted at #94. The tabloids LOVE u. UR therapist is RICH. ✨"
+            },
+            chaotic: {
+                name: "CRYSTAL LAMOURE 💄",
+                emoji: "💋📞💄",
+                bio: "U are CRYSTAL — reality TV's chaotic queen. Ur signature move? Throwing a drink, then writing a tell-all about it. Insiders confirm: u peaked, u know it, u DON'T CARE. 🍷"
+            },
+            diva: {
+                name: "MOXII MOON ⭐",
+                emoji: "💎⭐🔥",
+                bio: "U are MOXII — the it-girl everyone's obsessed with. Sources say u haven't paid for a drink since 2021. Ur Instagram is a CRIME SCENE of branded content. Iconic. UNREACHABLE. 💅"
+            },
+            healed: {
+                name: "BRENDYN CASHE 🧘",
+                emoji: "🧘🤍🍵",
+                bio: "U are BRENDYN — the one who 'left the industry to focus on wellness.' Spotted at a juice bar in Bali. Has a podcast about INTENTIONALITY. The tabloids have NOTHING on u. (Suspicious.) 🌿"
+            }
+        };
+
+        // Find all the answer buttons and attach a click handler to each
+        document.querySelectorAll('.answer').forEach(button => {
+            // Only attach to buttons that have data-points (not the PLAY AGAIN button)
+            if (button.hasAttribute('data-points')) {
+                button.addEventListener('click', function() {
+                    // Add the points from this answer to the total score
+                    const points = parseInt(this.getAttribute('data-points'));
+                    score += points;
+
+                    // Move to the next question (or show result)
+                    nextQuestion();
+                });
+            }
+        });
+
+        function nextQuestion() {
+            // Hide the current question
+            document.getElementById('q' + currentQuestion).style.display = 'none';
+
+            // Move to the next one
+            currentQuestion++;
+
+            if (currentQuestion <= totalQuestions) {
+                // Show next question
+                document.getElementById('q' + currentQuestion).style.display = 'block';
+            } else {
+                // Quiz is done — show the result
+                showResult();
+            }
+        }
+
+        function showResult() {
+            // Decide which result based on total score
+            // Score ranges: 5–8 = tragic, 9–12 = chaotic, 13–16 = diva, 17–20 = healed
+            let result;
+            if (score <= 8)       result = results.tragic;
+            else if (score <= 12) result = results.chaotic;
+            else if (score <= 16) result = results.diva;
+            else                  result = results.healed;
+
+            // Fill in the result info
+            document.getElementById('result-name').textContent = result.name;
+            document.getElementById('result-emoji').textContent = result.emoji;
+            document.getElementById('result-bio').textContent = result.bio;
+
+            // Show the result block
+            document.getElementById('result').style.display = 'block';
+        }
+
+        function restartQuiz() {
+            // Reset everything
+            score = 0;
+            currentQuestion = 1;
+            document.getElementById('result').style.display = 'none';
+            document.getElementById('q1').style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>
