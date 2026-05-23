@@ -213,7 +213,7 @@ text-shadow:
     font-size: 18px;
     text-align: center;
     padding: 25px 15px;
-    /* This jagged shape is the magic — clip-path cuts the box into a starburst */
+   
     clip-path: polygon(
         50% 0%, 61% 12%, 75% 5%, 78% 20%, 92% 18%,
         88% 32%, 100% 40%, 89% 50%, 100% 60%, 88% 68%,
@@ -238,7 +238,7 @@ text-shadow:
     50%      { transform: rotate(-5deg) scale(1.05); }
 }
 
-/* The cover-photo needs position:relative so the burst can position inside it */
+
 .cover-photo {
     position: relative;
 }
@@ -779,14 +779,14 @@ text-shadow:
 /* ====== Mystery cover photo ====== */
 
 .mystery-photo {
-    /* Override the striped background with a moody noir gradient */
+   
     background:
         radial-gradient(circle at 50% 30%, #4a0e4e 0%, #1a0033 80%);
     overflow: hidden;
     position: relative;
 }
 
-/* The silhouette — pure CSS, no image needed */
+
 
 .silhouette {
     position: absolute;
@@ -803,7 +803,7 @@ text-shadow:
     background: #000;
     border-radius: 50% 50% 45% 45%;
     margin: 0 auto;
-    /* Slight glow so it pops off the dark background */
+    
     box-shadow: 0 0 30px rgba(255, 0, 255, 0.4);
 }
 
@@ -812,12 +812,12 @@ text-shadow:
     height: 200px;
     background: #000;
     margin-top: -20px;
-    /* Curved shoulders */
+   
     border-radius: 50% 50% 0 0 / 80px 80px 0 0;
     box-shadow: 0 0 30px rgba(255, 0, 255, 0.4);
 }
 
-/* The diagonal IDENTITY HIDDEN stamp across the photo */
+
 
 .redacted-stamp {
     position: absolute;
@@ -834,12 +834,12 @@ text-shadow:
     text-shadow: 2px 2px 0 #000;
     z-index: 3;
     box-shadow: 0 0 30px rgba(255, 0, 0, 0.8);
-    /* Slight transparency so it feels stamped, not pasted */
+   
     opacity: 0.92;
     font-family: 'Arial Black', sans-serif;
 }
 
-/* The black censor bar over the eyes */
+
 
 .censor-bar {
     position: absolute;
@@ -873,7 +873,7 @@ text-shadow:
     font-style: normal;
 }
 
-/* EXCLUSIVE PHOTO sticker — opposite corner from FREE INSIDE */
+/* EXCLUSIVE PHOTO sticker  */
 
 .exclusive-sticker {
     position: absolute;
@@ -894,7 +894,6 @@ text-shadow:
     letter-spacing: 1px;
 }
 
-/* Hide the OLD striped placeholder text if it's still there */
 
 .mystery-photo .photo-placeholder {
     display: none;
